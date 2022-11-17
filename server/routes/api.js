@@ -4,6 +4,11 @@ const methodController = require('../controllers/methodController.js');
 
 const router = express.Router();
 
+router.get('/all',
+  methodController.getAllMethods,
+  (req, res) => res.status(200).json(res.locals.all)
+);
+
 router.get('/',
   methodController.getMethod,
   (req, res) => res.status(200).json(res.locals.method)

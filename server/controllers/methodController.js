@@ -1,6 +1,23 @@
 const Method = require('../models/methodModel.js');
 
 const MethodController = {
+
+  async getAllMethods(req, res, next) {
+    try {
+      all = await Method.find();
+      res.locals.all = all;
+      return next();
+    } catch {
+      return next(
+        {
+          log: 'Express error handler caught a middleware error in getMethod',
+          status: 500,
+          message: { err: 'An error occurred in getAllMethods' }
+        }
+      );
+    }
+  },
+
   async getMethod(req, res, next) {
     try {
       const result = await Method.findOne({class: req.query.class, name: req.query.name});
