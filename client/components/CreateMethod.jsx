@@ -26,7 +26,6 @@ class CreateMethod extends Component {
   
   handleSubmit(event) {
     event.preventDefault();
-    console.log(this.state.class);
     const requestOptions = {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },

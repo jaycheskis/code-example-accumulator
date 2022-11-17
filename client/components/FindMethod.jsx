@@ -74,8 +74,6 @@ class FindMethod extends Component {
 
   handleSubmit(event) {
     event.preventDefault();
-    console.log(this.state.class);
-    console.log(this.state.name);
     fetch('http://localhost:3000/api?' + new URLSearchParams({
       class: this.state.class,
       name: this.state.name
@@ -103,15 +101,15 @@ class FindMethod extends Component {
               {this.state.currentMethods}
             </select>
           </label>
+          <br />
+          <br />
           <input type="submit" value="Submit" />
         </form>
         <h4>MDN Example:</h4>
-        <br />
         <code>
           <pre>{this.state.mdnText}</pre>
         </code>
         <h4>W3Schools Example:</h4>
-        <br />
         <code>
           <pre>{this.state.w3Text}</pre>
         </code>
