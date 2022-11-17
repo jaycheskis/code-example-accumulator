@@ -3,8 +3,9 @@ const Method = require('../models/methodModel.js');
 const MethodController = {
   async getMethod(req, res, next) {
     try {
-      const result = await Method.findOne({class: req.body.class, name: req.body.name});
+      const result = await Method.findOne({class: req.query.class, name: req.query.name});
       res.locals.method = result;
+
       return next();
     } catch {
       return next(

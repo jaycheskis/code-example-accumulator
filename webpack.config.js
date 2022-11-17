@@ -38,9 +38,16 @@ module.exports = {
     static: {
       directory: path.join(__dirname, 'build'),
       publicPath: '/'
-    }, 
+    },
+
+    headers: {
+      'Access-Control-Allow-Origin': '*',
+    },
     proxy: {
-      '/api': 'http://localhost:3000'
+      '/api': {
+        target: 'http://localhost:3000',
+        secure: false
+      }
     }
   }
 };

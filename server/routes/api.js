@@ -6,7 +6,7 @@ const router = express.Router();
 
 router.get('/',
   methodController.getMethod,
-  (req, res) => res.status(200).send(res.locals.method)
+  (req, res) => res.status(200).json(res.locals.method)
 );
 
 router.post('/',

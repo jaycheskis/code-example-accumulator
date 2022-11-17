@@ -1,6 +1,7 @@
 const mongoose = require('mongoose');
+const URI = require('./uri.js');
 
-const MONGO_URI = 'mongodb+srv://jay:codeexampleaccumulator@cluster0.yaennxe.mongodb.net/?retryWrites=true&w=majority';
+const MONGO_URI = URI;
 
 mongoose.connect(MONGO_URI, {
   // options for the connect method to parse the URI
